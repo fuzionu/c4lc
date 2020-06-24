@@ -2,26 +2,26 @@ package regexMatchCalc;
 
 public class Calculator
 {
-    public int calculate(int firstNumber, int secondNumber, char operator)
+    public int calculate(OperatingData operatingData)
     {
-        if (operator == '+')
+        if (operatingData.operator == '+')
         {
-            return firstNumber + secondNumber;
+            return operatingData.firstNumber + operatingData.secondNumber;
         }
 
-        else if (operator == '-')
+        else if (operatingData.operator == '-')
         {
-            return firstNumber - secondNumber;
+            return operatingData.firstNumber - operatingData.secondNumber;
         }
 
-        else if (operator == '*' || operator == 'x')
+        else if (operatingData.operator == '*' || operatingData.operator == 'x')
         {
-            return firstNumber * secondNumber;
+            return operatingData.firstNumber * operatingData.secondNumber;
         }
 
-        else if (operator == ':' || operator == '/' || operator == '\\')
+        else if (operatingData.operator == ':' || operatingData.operator == '/' || operatingData.operator == '\\')
         {
-            return firstNumber / secondNumber;
+            return operatingData.firstNumber / operatingData.secondNumber;
         }
 
        throw new IllegalArgumentException();

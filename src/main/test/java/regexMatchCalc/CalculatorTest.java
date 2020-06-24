@@ -10,12 +10,10 @@ class CalculatorTest
     void shouldAdd()
     {
         // given
-        int firstNumber = 5;
-        int secondNumber = 7;
-        char operator = '+';
+        OperatingData operatingData = new OperatingData(5, 7, '+');
 
         // when
-        int actual = new Calculator().calculate(firstNumber, secondNumber, operator);
+        int actual = new Calculator().calculate(operatingData);
 
         // then
         assertEquals(12, actual);
@@ -25,12 +23,10 @@ class CalculatorTest
     void shouldSubtract()
     {
         // given
-        int firstNumber = 23;
-        int secondNumber = 13;
-        char operator = '-';
+        OperatingData operatingData = new OperatingData(23, 13, '-');
 
         // when
-        int actual = new Calculator().calculate(firstNumber, secondNumber, operator);
+        int actual = new Calculator().calculate(operatingData);
 
         // then
         assertEquals(10, actual);
@@ -40,12 +36,10 @@ class CalculatorTest
     void shouldMultiply_asterisk()
     {
         // given
-        int firstNumber = 7;
-        int secondNumber = 7;
-        char operator = '*';
+        OperatingData operatingData = new OperatingData(7, 7, '*');
 
         // when
-        int actual = new Calculator().calculate(firstNumber, secondNumber, operator);
+        int actual = new Calculator().calculate(operatingData);
 
         // then
         assertEquals(49, actual);
@@ -55,12 +49,10 @@ class CalculatorTest
     void shouldMultiply_x()
     {
         // given
-        int firstNumber = 10;
-        int secondNumber = 10;
-        char operator = 'x';
+        OperatingData operatingData = new OperatingData(10, 10, 'x');
 
         // when
-        int actual = new Calculator().calculate(firstNumber, secondNumber, operator);
+        int actual = new Calculator().calculate(operatingData);
 
         // then
         assertEquals(100, actual);
@@ -70,12 +62,10 @@ class CalculatorTest
     void shouldDivide_colon()
     {
         // given
-        int firstNumber = 25;
-        int secondNumber = 5;
-        char operator = ':';
+        OperatingData operatingData = new OperatingData(25, 5, ':');
 
         // when
-        int actual = new Calculator().calculate(firstNumber, secondNumber, operator);
+        int actual = new Calculator().calculate(operatingData);
 
         // then
         assertEquals(5, actual);
@@ -85,12 +75,10 @@ class CalculatorTest
     void shouldDivide_slash()
     {
         // given
-        int firstNumber = 35;
-        int secondNumber = 5;
-        char operator = '/';
+        OperatingData operatingData = new OperatingData(35, 5, '/');
 
         // when
-        int actual = new Calculator().calculate(firstNumber, secondNumber, operator);
+        int actual = new Calculator().calculate(operatingData);
 
         // then
         assertEquals(7, actual);
@@ -100,12 +88,10 @@ class CalculatorTest
     void shouldDivide_backslash()
     {
         // given
-        int firstNumber = 25;
-        int secondNumber = 5;
-        char operator = '\\';
+        OperatingData operatingData = new OperatingData(25, 5, '\\');
 
         // when
-        int actual = new Calculator().calculate(firstNumber, secondNumber, operator);
+        int actual = new Calculator().calculate(operatingData);
 
         // then
         assertEquals(5, actual);

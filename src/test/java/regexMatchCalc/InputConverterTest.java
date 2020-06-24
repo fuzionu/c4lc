@@ -11,15 +11,14 @@ class InputConverterTest
     {
         // given
         String input = "12+12";
-        OperatingData expected = new OperatingData(12, 12, '+');
 
         // when
         OperatingData actual = new InputConverter().convertInput(input);
 
         // then
-        assertEquals(expected.firstNumber, actual.firstNumber);
-        assertEquals(expected.secondNumber, actual.secondNumber);
-        assertEquals(expected.operator, actual.operator);
+        assertEquals(12, actual.firstNumber);
+        assertEquals(12, actual.secondNumber);
+        assertEquals('+', actual.operator);
     }
 
     @Test
@@ -27,15 +26,14 @@ class InputConverterTest
     {
         // given
         String input = "31-7";
-        OperatingData expected = new OperatingData(31, 7, '-');
 
         // when
         OperatingData actual = new InputConverter().convertInput(input);
 
         // then
-        assertEquals(expected.firstNumber, actual.firstNumber);
-        assertEquals(expected.secondNumber, actual.secondNumber);
-        assertEquals(expected.operator, actual.operator);
+        assertEquals(31, actual.firstNumber);
+        assertEquals(7, actual.secondNumber);
+        assertEquals('-', actual.operator);
     }
 
     @Test
@@ -43,15 +41,14 @@ class InputConverterTest
     {
         // given
         String input = "3*3";
-        OperatingData expected = new OperatingData(3, 3, '*');
 
         // when
         OperatingData actual = new InputConverter().convertInput(input);
 
         // then
-        assertEquals(expected.firstNumber, actual.firstNumber);
-        assertEquals(expected.secondNumber, actual.secondNumber);
-        assertEquals(expected.operator, actual.operator);
+        assertEquals(3, actual.firstNumber);
+        assertEquals(3, actual.secondNumber);
+        assertEquals('*', actual.operator);
     }
 
     @Test
@@ -59,15 +56,14 @@ class InputConverterTest
     {
         // given
         String input = "2x7";
-        OperatingData expected = new OperatingData(2, 7, 'x');
 
         // when
         OperatingData actual = new InputConverter().convertInput(input);
 
         // then
-        assertEquals(expected.firstNumber, actual.firstNumber);
-        assertEquals(expected.secondNumber, actual.secondNumber);
-        assertEquals(expected.operator, actual.operator);
+        assertEquals(2, actual.firstNumber);
+        assertEquals(7, actual.secondNumber);
+        assertEquals('x', actual.operator);
     }
 
     @Test
@@ -75,15 +71,14 @@ class InputConverterTest
     {
         // given
         String input = "21:7";
-        OperatingData expected = new OperatingData(21, 7, ':');
 
         // when
         OperatingData actual = new InputConverter().convertInput(input);
 
         // then
-        assertEquals(expected.firstNumber, actual.firstNumber);
-        assertEquals(expected.secondNumber, actual.secondNumber);
-        assertEquals(expected.operator, actual.operator);
+        assertEquals(21, actual.firstNumber);
+        assertEquals(7, actual.secondNumber);
+        assertEquals(':', actual.operator);
     }
 
     @Test
@@ -91,15 +86,14 @@ class InputConverterTest
     {
         // given
         String input = "30/10";
-        OperatingData expected = new OperatingData(30, 10, '/');
 
         // when
         OperatingData actual = new InputConverter().convertInput(input);
 
         // then
-        assertEquals(expected.firstNumber, actual.firstNumber);
-        assertEquals(expected.secondNumber, actual.secondNumber);
-        assertEquals(expected.operator, actual.operator);
+        assertEquals(30, actual.firstNumber);
+        assertEquals(10, actual.secondNumber);
+        assertEquals('/', actual.operator);
     }
 
     @Test
@@ -107,15 +101,14 @@ class InputConverterTest
     {
         // given
         String input = "45\\15";
-        OperatingData expected = new OperatingData(45, 15, '\\');
 
         // when
         OperatingData actual = new InputConverter().convertInput(input);
 
         // then
-        assertEquals(expected.firstNumber, actual.firstNumber);
-        assertEquals(expected.secondNumber, actual.secondNumber);
-        assertEquals(expected.operator, actual.operator);
+        assertEquals(45, actual.firstNumber);
+        assertEquals(15, actual.secondNumber);
+        assertEquals('\\', actual.operator);
     }
 
     @Test

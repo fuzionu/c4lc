@@ -21,6 +21,11 @@ public class Calculator
 
         else if (operatingData.operator == ':' || operatingData.operator == '/' || operatingData.operator == '\\')
         {
+            if (operatingData.secondNumber == 0)
+            {
+                throw new DividingByZeroException();
+            }
+
             return operatingData.firstNumber / operatingData.secondNumber;
         }
 

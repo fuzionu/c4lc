@@ -96,4 +96,14 @@ class CalculatorTest
         // then
         assertEquals(5, actual);
     }
+
+    @Test
+    void shouldNotAllowDividingByZero()
+    {
+        // given
+        OperatingData operatingData = new OperatingData(1, 0, ':');
+
+        // then
+        assertThrows(DividingByZeroException.class, () -> new Calculator().calculate(operatingData));
+    }
 }

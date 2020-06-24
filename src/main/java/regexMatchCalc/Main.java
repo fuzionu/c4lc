@@ -1,9 +1,11 @@
 package regexMatchCalc;
 
+import java.util.Scanner;
+
 public class Main
 {
     public static void main(String[] args)
     {
-        System.out.println("Regex match calculator");
+        new TextInterface(new Scanner(System.in)).start();
     }
 }

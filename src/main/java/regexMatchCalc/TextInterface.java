@@ -7,7 +7,7 @@ public class TextInterface
     private final Scanner scanner;
     private final InputConverter inputConverter = new InputConverter();
     private final ResultFormatter resultFormatter = new ResultFormatter();
-    private OperatingData operatingData;
+    private final Calculator calculator = new Calculator();
 
     public TextInterface(Scanner scanner)
     {
@@ -20,6 +20,9 @@ public class TextInterface
 
         do
         {
+            OperatingData operatingData;
+            int result;
+
             System.out.print("> ");
             String input = formatInput(scanner.nextLine());
 
@@ -34,6 +37,7 @@ public class TextInterface
                 break;
             }
 
+
             try
             {
                 operatingData = inputConverter.convertInput(input);
@@ -46,13 +50,16 @@ public class TextInterface
 
             try
             {
-                System.out.println(resultFormatter.formatResult(operatingData));
-                printWelcomeMessage();
+                result = calculator.calculate(operatingData);
             }
             catch (DividingByZeroException exc)
             {
                 System.out.println("Dividing by zero is not allowed. Type again.");
+                continue;
             }
+
+            System.out.println(resultFormatter.formatResult(operatingData) + result);
+            printWelcomeMessage();
 
         } while (true);
     }

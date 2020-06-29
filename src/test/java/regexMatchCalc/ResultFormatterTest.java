@@ -16,7 +16,7 @@ class ResultFormatterTest
         String actual = new ResultFormatter().formatResult(operatingData);
 
         // then
-        assertEquals("5 + 5 = 10", actual);
+        assertEquals("5 + 5 = ", actual);
     }
 
     @Test
@@ -29,7 +29,7 @@ class ResultFormatterTest
         String actual = new ResultFormatter().formatResult(operatingData);
 
         // then
-        assertEquals("12 - 6 = 6", actual);
+        assertEquals("12 - 6 = ", actual);
     }
 
     @Test
@@ -42,7 +42,7 @@ class ResultFormatterTest
         String actual = new ResultFormatter().formatResult(operatingData);
 
         // then
-        assertEquals("5 x 5 = 25", actual);
+        assertEquals("5 x 5 = ", actual);
     }
 
     @Test
@@ -55,6 +55,6 @@ class ResultFormatterTest
         String actual = new ResultFormatter().formatResult(operatingData);
 
         // then
-        assertEquals("35 : 7 = 5", actual);
+        assertEquals("35 : 7 = ", actual);
     }
 }

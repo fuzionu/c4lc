@@ -2,13 +2,9 @@ package regexMatchCalc;
 
 public class ResultFormatter
 {
-    private final Calculator calculator = new Calculator();
-
     public String formatResult(OperatingData operatingData)
     {
-        int result = calculator.calculate(operatingData);
-
-        return operatingData.firstNumber + " " + parseOperator(operatingData) + " " + operatingData.secondNumber + " = " + result;
+        return operatingData.firstNumber + " " + parseOperator(operatingData) + " " + operatingData.secondNumber + " = " ;
     }
 
     private char parseOperator(OperatingData operatingData)

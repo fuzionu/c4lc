@@ -1,4 +1,4 @@
-package regexMatchCalc;
+package c4lc;
 
 import org.junit.jupiter.api.Test;
 

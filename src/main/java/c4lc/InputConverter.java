@@ -1,4 +1,4 @@
-package regexMatchCalc;
+package c4lc;
 
 import java.util.regex.Matcher;
 

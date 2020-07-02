@@ -1,4 +1,4 @@
-package regexMatchCalc;
+package c4lc;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class InputConverterTest
+class InputParserTest
 {
     @Test
     void shouldConvertAdding()
@@ -13,7 +13,7 @@ class InputConverterTest
         String input = "12+12";
 
         // when
-        OperatingData actual = new InputConverter().convertInput(input);
+        OperatingData actual = new InputParser().parseInput(input);
 
         // then
         assertEquals(12, actual.firstNumber);
@@ -28,7 +28,7 @@ class InputConverterTest
         String input = "31-7";
 
         // when
-        OperatingData actual = new InputConverter().convertInput(input);
+        OperatingData actual = new InputParser().parseInput(input);
 
         // then
         assertEquals(31, actual.firstNumber);
@@ -43,7 +43,7 @@ class InputConverterTest
         String input = "3*3";
 
         // when
-        OperatingData actual = new InputConverter().convertInput(input);
+        OperatingData actual = new InputParser().parseInput(input);
 
         // then
         assertEquals(3, actual.firstNumber);
@@ -58,7 +58,7 @@ class InputConverterTest
         String input = "2x7";
 
         // when
-        OperatingData actual = new InputConverter().convertInput(input);
+        OperatingData actual = new InputParser().parseInput(input);
 
         // then
         assertEquals(2, actual.firstNumber);
@@ -73,7 +73,7 @@ class InputConverterTest
         String input = "21:7";
 
         // when
-        OperatingData actual = new InputConverter().convertInput(input);
+        OperatingData actual = new InputParser().parseInput(input);
 
         // then
         assertEquals(21, actual.firstNumber);
@@ -88,7 +88,7 @@ class InputConverterTest
         String input = "30/10";
 
         // when
-        OperatingData actual = new InputConverter().convertInput(input);
+        OperatingData actual = new InputParser().parseInput(input);
 
         // then
         assertEquals(30, actual.firstNumber);
@@ -103,7 +103,7 @@ class InputConverterTest
         String input = "45\\15";
 
         // when
-        OperatingData actual = new InputConverter().convertInput(input);
+        OperatingData actual = new InputParser().parseInput(input);
 
         // then
         assertEquals(45, actual.firstNumber);
@@ -118,6 +118,6 @@ class InputConverterTest
         String input = "wtf";
 
         // then
-        assertThrows(IllegalArgumentException.class, () -> new InputConverter().convertInput(input));
+        assertThrows(IllegalArgumentException.class, () -> new InputParser().parseInput(input));
     }
 }

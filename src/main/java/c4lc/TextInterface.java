@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class TextInterface
 {
     private final Scanner scanner;
-    private final InputConverter inputConverter = new InputConverter();
+    private final InputParser inputParser = new InputParser();
     private final ResultFormatter resultFormatter = new ResultFormatter();
     private final Calculator calculator = new Calculator();
 
@@ -40,7 +40,7 @@ public class TextInterface
 
             try
             {
-                operatingData = inputConverter.convertInput(input);
+                operatingData = inputParser.parseInput(input);
             }
             catch (IllegalArgumentException exc)
             {

@@ -2,8 +2,6 @@ package c4lc;
 
 public class Calculator
 {
-
-
     public static Operation plus = new Operation()
     {
         @Override
@@ -36,37 +34,39 @@ public class Calculator
         @Override
         public int calculate(int x, int y)
         {
+            if (y == 0)
+            {
+                throw new DividingByZeroException();
+            }
+
             return x / y;
         }
     };
 
     public int calculate(OperatingData operatingData)
     {
+        Operation operation = getOperation(operatingData);
+
+        return operation.calculate(operatingData.firstNumber, operatingData.secondNumber);
+    }
+
+    private Operation getOperation(OperatingData operatingData)
+    {
         if (operatingData.operator == '+')
         {
-            return plus.calculate(operatingData.firstNumber, operatingData.secondNumber);
+            return plus;
         }
 
         else if (operatingData.operator == '-')
         {
-            return minus.calculate(operatingData.firstNumber, operatingData.secondNumber);
+            return minus;
         }
 
         else if (operatingData.operator == '*' || operatingData.operator == 'x')
         {
-            return multiply.calculate(operatingData.firstNumber, operatingData.secondNumber);
+            return multiply;
         }
 
-        else if (operatingData.operator == ':' || operatingData.operator == '/' || operatingData.operator == '\\')
-        {
-            if (operatingData.secondNumber == 0)
-            {
-                throw new DividingByZeroException();
-            }
-
-            return divide.calculate(operatingData.firstNumber, operatingData.secondNumber);
-        }
-
-       throw new IllegalArgumentException();
+        return divide;
     }
 }

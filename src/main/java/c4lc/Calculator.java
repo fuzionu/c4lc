@@ -2,21 +2,59 @@ package c4lc;
 
 public class Calculator
 {
+
+
+    public static Operation plus = new Operation()
+    {
+        @Override
+        public int calculate(int x, int y)
+        {
+            return x + y;
+        }
+    };
+
+    public static Operation minus = new Operation()
+    {
+        @Override
+        public int calculate(int x, int y)
+        {
+            return x - y;
+        }
+    };
+
+    public static Operation multiply = new Operation()
+    {
+        @Override
+        public int calculate(int x, int y)
+        {
+            return x * y;
+        }
+    };
+
+    public static Operation divide = new Operation()
+    {
+        @Override
+        public int calculate(int x, int y)
+        {
+            return x / y;
+        }
+    };
+
     public int calculate(OperatingData operatingData)
     {
         if (operatingData.operator == '+')
         {
-            return operatingData.firstNumber + operatingData.secondNumber;
+            return plus.calculate(operatingData.firstNumber, operatingData.secondNumber);
         }
 
         else if (operatingData.operator == '-')
         {
-            return operatingData.firstNumber - operatingData.secondNumber;
+            return minus.calculate(operatingData.firstNumber, operatingData.secondNumber);
         }
 
         else if (operatingData.operator == '*' || operatingData.operator == 'x')
         {
-            return operatingData.firstNumber * operatingData.secondNumber;
+            return multiply.calculate(operatingData.firstNumber, operatingData.secondNumber);
         }
 
         else if (operatingData.operator == ':' || operatingData.operator == '/' || operatingData.operator == '\\')
@@ -26,7 +64,7 @@ public class Calculator
                 throw new DividingByZeroException();
             }
 
-            return operatingData.firstNumber / operatingData.secondNumber;
+            return divide.calculate(operatingData.firstNumber, operatingData.secondNumber);
         }
 
        throw new IllegalArgumentException();
